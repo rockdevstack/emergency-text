@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <LinearLayout android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <LinearLayout
@@ -15,12 +15,19 @@
             android:layout_height="match_parent"
             android:layout_weight="0.6"
             android:background="@color/colorPrimaryDark"
-            android:padding="20dp"
+            android:paddingTop="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="40dp"
             android:orientation="horizontal">
 
-            <Button
-                android:text="Test"
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/customMessage"
+                android:hint="Type your emergency and hit send..."
+                android:textColor="#fff"
+                android:textColorHint="#aaa"
+                android:backgroundTint="#fff"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
         </LinearLayout>
@@ -30,13 +37,102 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.4"
-            android:padding="20dp"
-            android:orientation="horizontal">
+            android:paddingTop="40dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="20dp"
+            android:orientation="vertical">
 
-            <Button
-                android:text="Test"
-                android:layout_width="wrap_content"
+            <TextView
+                android:text="Common Emergencies"
+                android:textStyle="bold"
+                android:textColor="#000"
+                android:textSize="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:text="Difficulty Breathing"
+                        android:onClick="sendText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <Button
+                        android:text="Gun Shot Wound"
+                        android:onClick="sendText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <Button
+                        android:text="Head Trauma"
+                        android:onClick="sendText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <Button
+                        android:text="Excessive Bleeding"
+                        android:onClick="sendText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <Button
+                        android:text="Explosion"
+                        android:onClick="sendText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:text="Fallen"
+                        android:onClick="sendText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <Button
+                        android:text="Unconscious"
+                        android:onClick="sendText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <Button
+                        android:text="Burned"
+                        android:onClick="sendText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <Button
+                        android:text="Knife Wound"
+                        android:onClick="sendText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <Button
+                        android:text="Fire"
+                        android:onClick="sendText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -48,8 +144,9 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:clickable="true"
-        android:backgroundTint="@color/colorAccent"
-        android:src="@drawable/ic_send"
+        android:onClick="sendText"
+        android:background="@color/colorAccent"
+        android:src="@drawable/ic_send_white_48dp"
         app:layout_anchor="@id/viewA"
         app:layout_anchorGravity="bottom|right|end"/>
 </android.support.design.widget.CoordinatorLayout>
